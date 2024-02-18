@@ -2,55 +2,74 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Title of the website -->
-    <title>SpaceX</title>
+  <!-- Title of the website -->
+  <title>SpaceX</title>
 
-    <!-- Link of external Css file -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Link of external Css file -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Link of Favicon -->
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <!-- Link of Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-    <!-- Link of tailwind and daisyUI -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Link of tailwind and daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+  <!-- Header section -->
+  <header>
+    <!-- Navbar Section -->
     <div class="navbar px-5 lg:px-12">
-        <div class="navbar-start">
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content text-2xl mt-3 z-[1] p-2 shadow rounded-box w-52">
-              <li><a>Home</a></li>
-              <li>
-                <a>About</a>
-              </li>
-              <li><a>Destination</a></li>
-              <li><a>Search</a></li>
-            </ul>
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg>
           </div>
-          <a class="btn btn-ghost text-3xl">SpaceX</a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <ul class="menu menu-horizontal text-2xl px-1">
+          <ul tabindex="0" class="menu menu-sm dropdown-content text-2xl mt-3 z-[1] p-2 shadow rounded-box w-52">
             <li><a>Home</a></li>
             <li>
-                <a>About</a>
+              <a>About</a>
             </li>
             <li><a>Destination</a></li>
             <li><a>Search</a></li>
           </ul>
         </div>
-        <div class="navbar-end">
-          <a class="btn text-2xl border border-solid border-[#1DD10066] bg-[#1DD1001A] text-[#40aa2f] font-semibold hover:bg-[#1cd10044]">Bus <img src="images/bus-icon.png" alt=""></a>
-        </div>
+        <a class="btn btn-ghost text-3xl">SpaceX</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal text-2xl px-1">
+          <li><a>Home</a></li>
+          <li>
+            <a>About</a>
+          </li>
+          <li><a>Destination</a></li>
+          <li><a>Search</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a
+          class="btn text-2xl border border-solid border-[#1DD10066] bg-[#1DD1001A] text-[#40aa2f] font-semibold hover:bg-[#1cd10044]">Bus
+          <img src="images/bus-icon.png" alt=""></a>
+      </div>
     </div>
+
+    <!-- Header content section -->
+    <div class="px-5 lg:px-12 bg-[url('/images/banner.png')] bg-no-repeat bg-cover flex items-center justify-center text-center mt-9 w-3/4 mx-auto">
+      <div class="content mb-24 mt-32">
+        <h1 class="mb-6 text-6xl font-extrabold text-white">End-to-End Travel with</h1>
+        <h2 class="mb-8 text-6xl font-extrabold text-[#72cf64]">SpaceX</h1>
+        <p class="mb-8 text-xl text-white w-3/4 mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+        <button id="ticket" class="px-5 py-4 rounded-xl bg-[#4fb83e] text-black text-xl font-medium mb-32">Buy Ticket</button>
+      </div>
+    </div>
+  </header>
 </body>
 
 </html>
