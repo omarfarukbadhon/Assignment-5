@@ -1,6 +1,5 @@
 function selectedSeatA1(){
     selectSeat('A1');
-    availableSeat();
 }
 function selectedSeatA2(){
     selectSeat('A2');

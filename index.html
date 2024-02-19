@@ -330,31 +330,31 @@
           <div class="flex justify-between items-center border-b-2 border-dotted border-gray-300 pb-4 text-[#030712] font-medium text-xl">
             <p>Seat <span class="px-2 bg-[#1DD100] rounded-xl text-white" id="selectedSeat">0</span></p>
             <p>Class</p>
-            <p>550</p>
+            <p>Price</p>
           </div>
-          <div class="flex justify-between items-center mt-4 ">
-            <p>A2</p>
+          <div class="justify-between items-center mt-4 hidden" id="selectedSeatDetailsOne">
+            <p id="SelectedSeatPositionOne"></p>
             <p>Economy</p>
             <p>550</p>
           </div>
-          <div class="flex justify-between items-center mt-4 ">
-            <p>A3</p>
+          <div class="hidden justify-between items-center mt-4 " id="selectedSeatDetailsTwo">
+            <p id="SelectedSeatPositionTwo"></p>
             <p>Economy</p>
             <p>550</p>
           </div>
-          <div class="flex justify-between items-center mt-4 ">
-            <p>A4</p>
+          <div class="hidden justify-between items-center mt-4 " id="selectedSeatDetailsThree">
+            <p id="SelectedSeatPositionThree"></p>
             <p>Economy</p>
             <p>550</p>
           </div>
-          <div class="flex justify-between items-center mt-4 border-b-2 border-solid border-gray-300 pb-4">
-            <p>C2</p>
+          <div class="hidden justify-between items-center mt-4 " id="selectedSeatDetailsFour">
+            <p id="SelectedSeatPositionFour"></p>
             <p>Economy</p>
             <p>550</p>
           </div>
-          <div class="flex justify-between items-center mt-4 text-2xl font-semibold">
+          <div class="flex justify-between items-center mt-4 text-2xl font-semibold border-t-2 border-solid border-gray-300 pt-4">
             <p>Total Price</p>
-            <p>BDT <span class="ml-2">0</span></p>
+            <p>BDT <span class="ml-2" id="totalPrice">0</span></p>
           </div>
           <label class="input input-bordered flex items-center gap-2 rounded-xl px-5 py-8 mt-5 w-[500px]">
             <input type="text" class="grow" placeholder="Have any coupon?" />
