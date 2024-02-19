@@ -71,3 +71,17 @@ function totalPrice(){
     document.getElementById('totalPrice').innerHTML = totalSelectedSeatPrice;
 }
 
+function couponTest(){
+    const givenCoupon = document.getElementById('coupon').value;
+    const originCoupleCoupon = document.getElementById('couple').innerText;
+    const originNewCoupon = document.getElementById('new').innerText;
+    const totalPrice = document.getElementById('totalPrice').innerText;
+    if(originCoupleCoupon == givenCoupon){
+        document.getElementById('grandTotal').innerHTML = totalPrice - (totalPrice*0.2);
+    }else if(originNewCoupon == givenCoupon){
+        document.getElementById('grandTotal').innerHTML = totalPrice - (totalPrice*0.15);
+    }else{
+        document.getElementById('grandTotal').innerHTML = totalPrice;
+    }
+}
+
