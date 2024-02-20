@@ -100,14 +100,20 @@ function finish(){
     const nameArray = name.split('');
     const phoneArray = phone.split('');
     // console.log(nameArray.length, phoneArray.length)
+    let selectedSeatValue = document.getElementById('selectedSeat').innerText;
+    let selectedSeatNumber = parseInt(selectedSeatValue);
 
-    if(nameArray.length >= 3 && phoneArray.length === 11){
+    if(nameArray.length >= 3 && phoneArray.length === 11 && selectedSeatNumber >= 1){
         if(phoneArray[0] == 0 && phoneArray[1] == 1){
-            window.location.href = 'done.html'
+            window.location.href = 'done.html';
         }else{
             alert('Enter correct phone number');
         }
     }else{
         alert('please fill the name and phone number properly');
     }
+}
+
+function getTicket(){
+    window.location.href = 'index.html';
 }
