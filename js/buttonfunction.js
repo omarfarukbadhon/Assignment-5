@@ -103,7 +103,7 @@ function finish(){
 
     if(nameArray.length >= 3 && phoneArray.length === 11){
         if(phoneArray[0] == 0 && phoneArray[1] == 1){
-            console.log('done');
+            window.location.href = 'done.html'
         }else{
             alert('Enter correct phone number');
         }
