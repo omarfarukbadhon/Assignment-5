@@ -93,3 +93,21 @@ function couponTest() {
         document.getElementById('grandTotal').innerHTML = totalPrice;
     }
 }
+
+function finish(){
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const nameArray = name.split('');
+    const phoneArray = phone.split('');
+    // console.log(nameArray.length, phoneArray.length)
+
+    if(nameArray.length >= 3 && phoneArray.length === 11){
+        if(phoneArray[0] == 0 && phoneArray[1] == 1){
+            console.log('done');
+        }else{
+            alert('Enter correct phone number');
+        }
+    }else{
+        alert('please fill the name and phone number properly');
+    }
+}
