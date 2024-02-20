@@ -1,5 +1,7 @@
-const button = document.getElementById('couponID');
-button.disabled = true;
+const couponButton = document.getElementById('couponID');
+const nextButton = document.getElementById('nextID');
+couponButton.disabled = true;
+nextButton.disabled = true;
 
 function selectSeat(selectSeatID) {
     const getSelectSeatID = document.getElementById(selectSeatID);
@@ -43,6 +45,14 @@ function selectedSeat() {
         const button = document.getElementById('couponID');
         button.disabled = true;
     }
+    if (selectedSeat >= 1) {
+        const nextButton = document.getElementById('nextID');
+        nextButton.disabled = false;
+        nextButton.onclick = finish;
+    }else{
+        const nextButton = document.getElementById('nextID');
+        nextButton.disabled = true;
+    }
 }
 
 function selectedSeatDetails(selectedSeatDetailsID) {
@@ -78,6 +88,7 @@ function totalPrice() {
     let selectedSeatNumber = parseInt(selectedSeatValue);
     const totalSelectedSeatPrice = (selectedSeatNumber + 1) * 550;
     document.getElementById('totalPrice').innerHTML = totalSelectedSeatPrice;
+    document.getElementById('grandTotal').innerHTML = totalSelectedSeatPrice;
 }
 
 function couponTest() {
@@ -87,14 +98,22 @@ function couponTest() {
     const totalPrice = document.getElementById('totalPrice').innerText;
     if (originCoupleCoupon == givenCoupon) {
         document.getElementById('grandTotal').innerHTML = parseInt(totalPrice - (totalPrice * 0.2));
+        document.getElementById('discount').innerHTML = parseInt(totalPrice - (totalPrice * 0.2));
+        const hideCouponArea = document.getElementById('couponArea');
+        hideCouponArea.classList.add('hidden');
+        selectedSeatDetails('discountArea');
     } else if (originNewCoupon == givenCoupon) {
         document.getElementById('grandTotal').innerHTML = parseInt(totalPrice - (totalPrice * 0.15));
+        document.getElementById('discount').innerHTML = parseInt((totalPrice * 0.15));
+        const hideCouponArea = document.getElementById('couponArea');
+        hideCouponArea.classList.add('hidden');
+        selectedSeatDetails('discountArea');
     } else {
-        document.getElementById('grandTotal').innerHTML = totalPrice;
+        alert("please make sure your coupon is correct")
     }
 }
 
-function finish(){
+function finish() {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const nameArray = name.split('');
@@ -103,17 +122,17 @@ function finish(){
     let selectedSeatValue = document.getElementById('selectedSeat').innerText;
     let selectedSeatNumber = parseInt(selectedSeatValue);
 
-    if(nameArray.length >= 3 && phoneArray.length === 11 && selectedSeatNumber >= 1){
-        if(phoneArray[0] == 0 && phoneArray[1] == 1){
+    if (nameArray.length >= 3 && phoneArray.length === 11 && selectedSeatNumber >= 1) {
+        if (phoneArray[0] == 0 && phoneArray[1] == 1) {
             window.location.href = 'done.html';
-        }else{
+        } else {
             alert('Enter correct phone number');
         }
-    }else{
-        alert('please fill the name and phone number properly');
+    } else {
+        alert('please fill the name and phone number properly and Select at least one seat!');
     }
 }
 
-function getTicket(){
+function getTicket() {
     window.location.href = 'index.html';
 }

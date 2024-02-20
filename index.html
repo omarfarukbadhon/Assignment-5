@@ -356,7 +356,11 @@
             <p>Total Price</p>
             <p>BDT <span class="ml-2" id="totalPrice">0</span></p>
           </div>
-          <label class="input input-bordered flex items-center gap-2 rounded-xl px-5 py-8 mt-5 w-[500px]">
+          <div class="hidden justify-between items-center mt-4 text-2xl font-semibold border-b-2 border-solid border-gray-300 pb-4" id="discountArea">
+            <p>Discount</p>
+            <p>BDT <span class="ml-2" id="discount">0</span></p>
+          </div>
+          <label class="input input-bordered flex items-center gap-2 rounded-xl px-5 py-8 mt-5 w-[500px]" id="couponArea">
             <input type="text" class="grow" placeholder="Have any coupon?" id="coupon"/>
             <button  id="couponID" class="badge badge-info rounded-lg bg-[#1DD100] text-white p-5 " onclick="couponTest()">Apply</button>
           </label>
@@ -371,7 +375,7 @@
         <input type="number " placeholder="Enter your phone number" class="input input-bordered w-full max-w-xs mt-4" id="phone"/>
         <p class="mt-6 text-xl font-semibold">Email ID</p>
         <input type="text" placeholder="Enter your email id" class="input input-bordered w-full max-w-xs mt-4" /><br>
-        <button class="btn btn-success mt-6 text-xl font-semibold" onclick="finish()">Next</button>
+        <button id="nextID" class="btn btn-success mt-6 text-xl font-semibold" onclick="finish()">Next</button>
         <div class="flex gap-7 justify-center items-center mt-6 underline">
           <a href="#">Terms and Conditions</a>
           <a href="#">Cancellation Policy</a>
