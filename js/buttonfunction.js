@@ -1,3 +1,6 @@
+const button = document.getElementById('couponID');
+button.disabled = true;
+
 function selectSeat(selectSeatID) {
     const getSelectSeatID = document.getElementById(selectSeatID);
     addSeat(selectSeatID);
@@ -33,55 +36,60 @@ function selectedSeat() {
         elementsWithOnClick.forEach(function (element) {
             element.removeAttribute('onclick');
         });
+        const button = document.getElementById('couponID');
+        button.disabled = false;
+        button.onclick = couponTest;
+    } else {
+        const button = document.getElementById('couponID');
+        button.disabled = true;
     }
 }
 
-function selectedSeatDetails(selectedSeatDetailsID){
+function selectedSeatDetails(selectedSeatDetailsID) {
     const getSelectSeatDetailsID = document.getElementById(selectedSeatDetailsID);
     getSelectSeatDetailsID.classList.remove('hidden');
     getSelectSeatDetailsID.classList.add('flex');
 }
 
-function addSeat(selectSeatID){
+function addSeat(selectSeatID) {
     const getSelectSeatID = document.getElementById(selectSeatID);
     const getSeatPosition = getSelectSeatID.innerText;
     let availableSeatValue = document.getElementById('availableSeat').innerText;
-    if(availableSeatValue == 40){
+    if (availableSeatValue == 40) {
         document.getElementById('SelectedSeatPositionOne').innerText = getSeatPosition;
         selectedSeatDetails('selectedSeatDetailsOne');
     }
-    if(availableSeatValue == 39){
+    if (availableSeatValue == 39) {
         document.getElementById('SelectedSeatPositionTwo').innerText = getSeatPosition;
         selectedSeatDetails('selectedSeatDetailsTwo');
     }
-    if(availableSeatValue == 38){
+    if (availableSeatValue == 38) {
         document.getElementById('SelectedSeatPositionThree').innerText = getSeatPosition;
         selectedSeatDetails('selectedSeatDetailsThree');
     }
-    if(availableSeatValue == 37){
+    if (availableSeatValue == 37) {
         document.getElementById('SelectedSeatPositionFour').innerText = getSeatPosition;
         selectedSeatDetails('selectedSeatDetailsFour');
     }
 }
 
-function totalPrice(){
+function totalPrice() {
     let selectedSeatValue = document.getElementById('selectedSeat').innerText;
     let selectedSeatNumber = parseInt(selectedSeatValue);
-    const totalSelectedSeatPrice = (selectedSeatNumber+1)*550;
+    const totalSelectedSeatPrice = (selectedSeatNumber + 1) * 550;
     document.getElementById('totalPrice').innerHTML = totalSelectedSeatPrice;
 }
 
-function couponTest(){
+function couponTest() {
     const givenCoupon = document.getElementById('coupon').value;
     const originCoupleCoupon = document.getElementById('couple').innerText;
     const originNewCoupon = document.getElementById('new').innerText;
     const totalPrice = document.getElementById('totalPrice').innerText;
-    if(originCoupleCoupon == givenCoupon){
-        document.getElementById('grandTotal').innerHTML = totalPrice - (totalPrice*0.2);
-    }else if(originNewCoupon == givenCoupon){
-        document.getElementById('grandTotal').innerHTML = totalPrice - (totalPrice*0.15);
-    }else{
+    if (originCoupleCoupon == givenCoupon) {
+        document.getElementById('grandTotal').innerHTML = parseInt(totalPrice - (totalPrice * 0.2));
+    } else if (originNewCoupon == givenCoupon) {
+        document.getElementById('grandTotal').innerHTML = parseInt(totalPrice - (totalPrice * 0.15));
+    } else {
         document.getElementById('grandTotal').innerHTML = totalPrice;
     }
 }
-
